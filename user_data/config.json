@@ -1,0 +1,164 @@
+{
+    "max_open_trades": -1,
+    "stake_currency": "BTC",
+    "stake_amount": 0.00025,
+    "tradable_balance_ratio": 0.99,
+    "fiat_display_currency": "BRL",
+    "timeframe": "1h",
+    "dry_run": true,
+    "cancel_open_orders_on_exit": false,
+    "unfilledtimeout": {
+        "buy": 10,
+        "sell": 30
+    },
+
+    "protections": [
+        {
+            "method": "StoplossGuard",
+            "lookback_period_candles": 18,
+            "trade_limit": 2,
+            "stop_duration_candles": 9,
+            "only_per_pair": false
+        }
+    ],
+
+    "bid_strategy": {
+        "price_side": "bid",
+        "ask_last_balance": 1.0,
+        "use_order_book": true,
+        "order_book_top": 1,
+        "check_depth_of_market": {
+            "enabled": false,
+            "bids_to_ask_delta": 1
+        }
+    },
+    "ask_strategy": {
+        "price_side": "ask",
+        "use_order_book": false,
+        "order_book_min": 1,
+        "order_book_max": 1,
+        "use_sell_signal": true,
+        "sell_profit_only": false,
+        "ignore_roi_if_buy_signal": false
+    },
+    "exchange": {
+        "name": "binance",
+        "key": "WXwiN7iGag6PtltAZeiRRu3QpTbv1KCktppR3l3W8MY6a1R2CFY50APKtdJoh2ot",
+        "secret": "Q7eZmdju5VeiBHNCL4BfWWpxKOzINAL2uBd85noZWOJHtSsmWPnxwCaWE2dfI7dC",
+        "ccxt_config": {"enableRateLimit": true},
+        "ccxt_async_config": {
+            "enableRateLimit": true,
+            "rateLimit": 200
+        },
+        // "XMR/BTC",
+        // "ZEC/BTC",
+        // "ONT/BTC",
+        // "ADA/BTC",
+        // "XLM/BTC",
+        // "XRP/BTC",
+        // "UNI/BTC",
+        // "WBTC/BTC",
+        // "FTT/BTC",
+        // "DASH/BTC",
+        // "SNX/BTC",
+        // "MKR/BTC",
+        // "FIL/BTC",
+        // "SUSHI/BTC",
+        // "COMP/BTC"
+        "pair_whitelist": [
+            "BNB/BTC",
+            "ETC/BTC",
+            "ETH/BTC",
+            "EOS/BTC",
+            "LTC/BTC",
+            "DOT/BTC",
+            "BCH/BTC",
+            "AAVE/BTC",
+            "ATOM/BTC",
+            "THETA/BTC",
+            "AVAX/BTC",
+            "EGLD/BTC",
+            "XMR/BTC",
+            "ZEC/BTC",
+            "ONT/BTC",
+            "ADA/BTC",
+            "XLM/BTC",
+            "XRP/BTC",
+            "UNI/BTC",
+            "WBTC/BTC",
+            "FTT/BTC",
+            "DASH/BTC",
+            "SNX/BTC",
+            "MKR/BTC",
+            "FIL/BTC",
+            "SUSHI/BTC",
+            "COMP/BTC",
+            "LINK/BTC",
+            "NEO/BTC"
+        ],
+        "pair_blacklist": [
+            // "DASH/BTC",
+            // "XRP/BTC",
+            // "ONT/BTC",
+            // "ZEC/BTC",
+            // "XMR/BTC"
+            // "LINK/BTC",
+            // "ETH/BTC",
+            // "XVG/BTC",
+            // "BNB/BTC",
+            // "BNB/BUSD",
+            // "BNB/ETH",
+            // "BNB/EUR",
+            // "BNB/NGN",
+            // "BNB/PAX",
+            // "BNB/RUB",
+            // "BNB/TRY",
+            // "BNB/TUSD",
+            // "BNB/USDC",
+            // "BNB/USDS",
+            // "BNB/USDT",
+        ]
+    },
+    "pairlists": [
+        {"method": "StaticPairList" //"VolumePairList", // ,
+        // "number_assets": 200,
+        // "sort_key": "quoteVolume",
+        // "refresh_period": 1800
+        }
+    ],
+    "edge": {
+        "enabled": false,
+        "process_throttle_secs": 3600,
+        "calculate_since_number_of_days": 7,
+        "allowed_risk": 0.02,
+        "stoploss_range_min": -0.01,
+        "stoploss_range_max": -0.3,
+        "stoploss_range_step": -0.01,
+        "minimum_winrate": 0.0,
+        "minimum_expectancy": 0.0,
+        "min_trade_number": 1,
+        "max_trade_duration_minute": 1440,
+        "remove_pumps": false
+    },
+    "telegram": {
+        "enabled": true,
+        "token": "1666963903:AAGMTvULOWO6OYuQEHSt7rZVXpanPl9l3W0",
+        "chat_id": "1272433706"
+    },
+    "api_server": {
+        "enabled": false,
+        "listen_ip_address": "127.0.0.1",
+        "listen_port": 8080,
+        "verbosity": "info",
+        "jwt_secret_key": "somethingrandom",
+        "CORS_origins": [],
+        "username": "",
+        "password": ""
+    },
+    "bot_name": "freqtrade2",
+    "initial_state": "running",
+    "forcebuy_enable": false,
+    "internals": {
+        "process_throttle_secs": 5
+    }
+}
